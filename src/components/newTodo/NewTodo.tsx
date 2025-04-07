@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from 'react'
 import { Button, ButtonIcon } from '../button/Button'
+import { data } from './Constants'
 import styles from './NewTodo.module.scss'
 
 /* TODO: 1. Сделать кнопку DELETE.  ☑
@@ -10,17 +11,6 @@ import styles from './NewTodo.module.scss'
 				 6. При нажатии на гамбургер вылетает меню.
 */
 
-let data = [
-	{
-		id: 1,
-		task: 'Stretch',
-		isDone: false,
-	},
-	{ id: 2, task: 'Studies', isDone: true },
-	{ id: 3, task: 'Water', isDone: false },
-	{ id: 4, task: 'Yoga', isDone: false },
-	{ id: 5, task: 'Vitamins', isDone: true },
-]
 interface NewTodoProps {
 	buttonText: string
 }
