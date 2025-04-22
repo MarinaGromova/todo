@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from 'react'
-import { Button, ButtonIcon } from '../button/Button'
+import { GoArrowDown, GoArrowUp } from 'react-icons/go'
+import { Button, ButtonIcon } from '../ui/button/Button'
 import { data } from './Constants'
 import styles from './NewTodo.module.scss'
 
@@ -16,18 +17,7 @@ interface NewTodoProps {
 }
 export const NewTodo = ({ buttonText }: NewTodoProps) => {
 	const [tasks, setTasks] = useState(data)
-	// const [tasksActive, setTasksActive] = useState(data)
 	const [choice, setChoiceAll] = useState(false)
-
-	// const choiceActive = () => {
-	// 	setChoiceAll(!choice)
-	// 	if (!choice) {
-	// 		let task = tasks.filter(t => t.isDone === true)
-	// 		setTasks(task)
-	// 	} else {
-	// 		setTasks(tasksAll)
-	// 	}
-	// }
 
 	const choiceAll = () => {
 		setChoiceAll(!choice)
@@ -47,8 +37,8 @@ export const NewTodo = ({ buttonText }: NewTodoProps) => {
 	}
 
 	const deleteTask = (index: number) => {
-		const updateTack = tasks.filter((_, i) => i !== index)
-		setTasks(updateTack)
+		const updateT = tasks.filter((_, i) => i !== index)
+		setTasks(updateT)
 	}
 
 	const choiceTask = (index: number, isDone: boolean) => {
@@ -58,9 +48,30 @@ export const NewTodo = ({ buttonText }: NewTodoProps) => {
 		setTasks(copy)
 	}
 
+	const changeTaskUp = (index: number) => {
+		if (index > 0) {
+			const updateTack = [...tasks]
+			;[updateTack[index], updateTack[index - 1]] = [
+				updateTack[index - 1],
+				updateTack[index],
+			]
+			setTasks(updateTack)
+		}
+	}
+	const changeTaskDown = (index: number) => {
+		if (index < tasks.length - 1) {
+			const updateTack = [...tasks]
+			;[updateTack[index + 1], updateTack[index]] = [
+				updateTack[index],
+				updateTack[index + 1],
+			]
+			setTasks(updateTack)
+		}
+	}
+
 	return (
 		<>
-			<div>
+			<div className={styles.wrapper}>
 				<Button
 					renderIcon={(props, state) => (
 						<ButtonIcon
@@ -84,6 +95,20 @@ export const NewTodo = ({ buttonText }: NewTodoProps) => {
 										}
 									/>
 									<span className={styles.p}>{t.task}</span>
+									<div>
+										<button
+											onClick={() => changeTaskDown(index)}
+											className={styles.close}
+										>
+											<GoArrowDown fontSize={30} />
+										</button>
+										<button
+											onClick={() => changeTaskUp(index)}
+											className={styles.close}
+										>
+											<GoArrowUp fontSize={30} />
+										</button>
+									</div>
 									<button
 										className={styles.close}
 										onClick={() => deleteTask(index)}
