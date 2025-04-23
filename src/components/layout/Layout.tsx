@@ -1,12 +1,12 @@
-import { NewTodo } from '../newTodo/NewTodo'
+import { NewTodos } from '../newTodos/NewTodos'
 import { Header } from './header/Header'
 
 export const Layout = () => {
 	return (
 		<>
 			<Header />
-			<NewTodo buttonText='TODO' />
-			{/* <NewTodo buttonText="DONE" /> */}
+			<NewTodos buttonText='TODO' />
+			{/* <NewTodos buttonText="DONE" /> */}
 		</>
 	)
 }
