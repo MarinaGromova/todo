@@ -19,6 +19,7 @@ interface NewTodoProps {
 export const NewTodos = ({ buttonText }: NewTodoProps) => {
 	const [tasks, setTasks] = useState(data)
 	const [choice, setChoiceAll] = useState(false)
+	const [newTaskValue, setNewTaskValue] = useState('')
 
 	const choiceAll = () => {
 		setChoiceAll(!choice)
@@ -37,6 +38,16 @@ export const NewTodos = ({ buttonText }: NewTodoProps) => {
 		}
 	}
 
+	const handleInputChange = e => {
+		setNewTaskValue(e.target.value)
+	}
+
+	const addTask = () => {
+		let newTask = { id: 6, task: newTaskValue, isDone: false }
+		setTasks(t => [newTask, ...t])
+		setNewTaskValue('')
+	}
+
 	return (
 		<>
 			<div className={styles.wrapper}>
@@ -51,12 +62,18 @@ export const NewTodos = ({ buttonText }: NewTodoProps) => {
 					)}
 				/>
 				<div className={styles.wrapper}>
-					<NewTodo tasks={tasks} setTasks={setTasks} />
 					<div className={styles.il}>
-						<img src='layout/circle1.svg' />
-						<p>Add</p>
+						<input
+							className={styles.input}
+							value={newTaskValue}
+							type='text'
+							onChange={handleInputChange}
+						/>
+						<button className={styles.add} onClick={addTask}>
+							+ Add New
+						</button>
 					</div>
-
+					<NewTodo tasks={tasks} setTasks={setTasks} />
 					<div className={styles.il}>
 						<button className={styles.circle} onClick={choiceAll}>
 							{choice ? (
