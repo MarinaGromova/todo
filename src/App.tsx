@@ -6,11 +6,9 @@ function App() {
 	const colorObject = useBackGroundResize()
 
 	return (
-		<>
-			<div style={colorObject}>
-				<Layout />
-			</div>
-		</>
+		<div style={colorObject}>
+			<Layout />
+		</div>
 	)
 }
 
