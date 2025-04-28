@@ -11,6 +11,7 @@ interface NewTodoProps {
 
 export const NewTodo = ({ t, tasks, setTasks, index }: NewTodoProps) => {
 	const choiceTask = (index: number, isDone: boolean) => {
+		console.log('xep')
 		let task = tasks.find((t: any) => t.id === index)
 		if (task) task.isDone = isDone
 		let copy = [...tasks]

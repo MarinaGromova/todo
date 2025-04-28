@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { NewTodo } from '../newTodo/NewTodo'
 import { Button, ButtonIcon } from '../ui/button/Button'
+import { ButtonAdd } from '../ui/button/buttonAdd/ButtonAdd'
 import { ButtonAll } from '../ui/button/buttonAll/ButtonAll'
-import { ButtonAdd } from '../ui/buttonAdd/ButtonAdd'
 import { data } from './Constants'
 import styles from './NewTodos.module.scss'
 

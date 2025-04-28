@@ -1,15 +1,8 @@
-import './App.module.scss'
-import { useBackGroundResize } from './components/hooks/useBackGroundResize'
+import './assets/styles/index.scss'
 import { Layout } from './components/layout/Layout'
 
 function App() {
-	const colorObject = useBackGroundResize()
-
-	return (
-		<div style={colorObject}>
-			<Layout />
-		</div>
-	)
+	return <Layout />
 }
 
 export default App

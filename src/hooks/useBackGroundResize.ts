@@ -8,8 +8,8 @@ export const useBackGroundResize = () => {
 	useEffect(() => {
 		const listener = () => {
 			const width = window.innerWidth
-			setBackground(width > 600 ? background : '#adefd1')
-			setColor(width > 600 ? color : '#00203f')
+			setBackground(width > 768 ? background : '#adefd1')
+			setColor(width > 768 ? color : '#00203f')
 			setWidth(width)
 		}
 		window.addEventListener('resize', listener)

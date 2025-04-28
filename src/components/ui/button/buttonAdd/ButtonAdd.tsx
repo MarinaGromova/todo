@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { NewTodoProps } from '../../newTodos/NewTodos'
-import styles from '../../newTodos/NewTodos.module.scss'
+import { NewTodoProps } from '../../../newTodos/NewTodos'
+import styles from '../../../newTodos/NewTodos.module.scss'
 
 export const ButtonAdd = ({ setTasks }: NewTodoProps) => {
 	const [newTaskValue, setNewTaskValue] = useState('')
@@ -10,9 +10,11 @@ export const ButtonAdd = ({ setTasks }: NewTodoProps) => {
 	}
 
 	const addTask = () => {
-		let newTask = { id: 6, task: newTaskValue, isDone: false }
-		setTasks((t: any) => [newTask, ...t])
-		setNewTaskValue('')
+		if (newTaskValue !== '') {
+			let newTask = { id: 6, task: newTaskValue, isDone: false }
+			setTasks((t: any) => [newTask, ...t])
+			setNewTaskValue('')
+		}
 	}
 
 	return (
