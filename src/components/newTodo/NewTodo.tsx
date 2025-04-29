@@ -11,25 +11,25 @@ interface NewTodoProps {
 
 export const NewTodo = ({ t, tasks, setTasks, index }: NewTodoProps) => {
 	const choiceTask = (index: number, isDone: boolean) => {
-		console.log('xep')
-		let task = tasks.find((t: any) => t.id === index)
+		let task = tasks.find((t: any) => {
+			return t.id === index
+		})
 		if (task) task.isDone = isDone
 		let copy = [...tasks]
 		setTasks(copy)
 	}
 
 	return (
-		<form className={styles.li} method='get'>
-			<input
-				type='checkbox'
-				name='name'
-				id='name'
-				required
-				checked={t.isDone}
-				onChange={e => choiceTask(t.id, e.target.checked)}
-			/>
-			<span className={styles.p}>{t.task}</span>
+		<>
+			<form className={styles.li}>
+				<input
+					type='checkbox'
+					checked={t.isDone}
+					onChange={e => choiceTask(t.id, e.target.checked)}
+				/>
+				<span className={styles.p}>{t.task}</span>
+			</form>
 			<Arrow tasks={tasks} setTasks={setTasks} index={index} />
-		</form>
+		</>
 	)
 }
