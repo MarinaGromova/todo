@@ -1,29 +1,23 @@
 @import '../../assets/styles/variables';
 
-.li {
-	display: flex;
-	flex-direction: row;
-	gap: 30px;
-}
-
 .p {
+	margin-left: 50px;
 	font-size: 30px;
-	min-width: 130px;
 	word-break: break-all;
 }
 
-// .checkbox {
-// 	display: none;
-// }
+.checkbox {
+	display: none;
+}
 
-// .span {
-// 	width: 30px;
-// 	height: 30px;
-// 	background-color: $accent-light;
-// 	position: absolute;
-// 	margin-top: 9px;
-// 	margin-right: 5px;
-// }
+.span {
+	width: 30px;
+	height: 30px;
+	background-color: $accent-light;
+	position: absolute;
+	margin-top: 22px;
+	// margin-right: 5px;
+}
 
 // .checkbox:checked + .checkbox_span::before {
 // 	content: 'ff';

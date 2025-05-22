@@ -1,6 +1,6 @@
 import { GoArrowDown, GoArrowUp } from 'react-icons/go'
 import { TaskType } from '../newTodos/NewTodos'
-import styles from '../newTodos/NewTodos.module.scss'
+import styles from './Arrow.module.scss'
 
 interface NewTodoProps {
 	index: number
@@ -36,18 +36,16 @@ export const Arrow = ({ index, tasks, setTasks }: NewTodoProps) => {
 	}
 
 	return (
-		<>
-			<div>
-				<button onClick={() => changeTaskDown(index)} className={styles.close}>
-					<GoArrowDown fontSize={30} />
-				</button>
-				<button onClick={() => changeTaskUp(index)} className={styles.close}>
-					<GoArrowUp fontSize={30} />
-				</button>
-			</div>
-			<button className={styles.close} onClick={() => deleteTask(index)}>
+		<div className={styles.arrow}>
+			<button onClick={() => changeTaskDown(index)} className={styles.button}>
+				<GoArrowDown fontSize={30} />
+			</button>
+			<button onClick={() => changeTaskUp(index)} className={styles.button}>
+				<GoArrowUp fontSize={30} />
+			</button>
+			<button className={styles.button} onClick={() => deleteTask(index)}>
 				<img src='layout/close.svg' />
 			</button>
-		</>
+		</div>
 	)
 }

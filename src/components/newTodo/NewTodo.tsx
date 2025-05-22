@@ -21,12 +21,17 @@ export const NewTodo = ({ t, tasks, setTasks, index }: NewTodoProps) => {
 
 	return (
 		<>
-			<form className={styles.li}>
-				<input
-					type='checkbox'
-					checked={t.isDone}
-					onChange={e => choiceTask(t.id, e.target.checked)}
-				/>
+			<form>
+				<label>
+					<input
+						className={styles.checkbox}
+						type='checkbox'
+						checked={t.isDone}
+						onChange={e => choiceTask(t.id, e.target.checked)}
+					/>
+					<span className={styles.span}></span>
+				</label>
+
 				<span className={styles.p}>{t.task}</span>
 			</form>
 			<Arrow tasks={tasks} setTasks={setTasks} index={index} />
