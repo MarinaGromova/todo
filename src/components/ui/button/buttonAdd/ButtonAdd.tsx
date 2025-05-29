@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { NewTodoProps } from '../../../newTodos/NewTodos'
-import styles from '../../../newTodos/NewTodos.module.scss'
+import { NewTodoProps } from '../../../screens/newTodos/NewTodos'
+import styles from './ButtonAdd.module.scss'
 
 export const ButtonAdd = ({ setTasks }: NewTodoProps) => {
 	const [newTaskValue, setNewTaskValue] = useState('')
@@ -18,19 +18,17 @@ export const ButtonAdd = ({ setTasks }: NewTodoProps) => {
 	}
 
 	return (
-		<div className={styles.wrapper}>
-			<div className={styles.il}>
-				<input
-					className={styles.input}
-					value={newTaskValue}
-					type='text'
-					onChange={handleInputChange}
-					placeholder='Enter a task ...'
-				/>
-				<button className={styles.add} onClick={addTask}>
-					+ Add New
-				</button>
-			</div>
-		</div>
+		<form className={styles.wrapper}>
+			<input
+				className={styles.input}
+				value={newTaskValue}
+				type='text'
+				onChange={handleInputChange}
+				placeholder='Enter a task ...'
+			/>
+			<button className={styles.add} onClick={addTask}>
+				+ add
+			</button>
+		</form>
 	)
 }

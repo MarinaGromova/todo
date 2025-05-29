@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { NewTodoProps } from '../../../newTodos/NewTodos'
-import styles from '../../../newTodos/NewTodos.module.scss'
+import { NewTodoProps } from '../../../screens/newTodos/NewTodos'
+import styles from '../../../screens/newTodos/NewTodos.module.scss'
 import { SvgChosen } from '../../svg/SvgChosen'
 import { SvgUnMarket } from '../../svg/SvgUnmarked'
 

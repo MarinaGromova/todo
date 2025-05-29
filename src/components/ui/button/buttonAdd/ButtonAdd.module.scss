@@ -1,0 +1,23 @@
+@import '../../../../assets/styles/variables';
+
+.wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 10px;
+}
+
+.add {
+	font-size: clamp(1.125rem, 0.9684rem + 0.6958vw, 1.5625rem);
+	border: 1px solid $accent-dark;
+	border-radius: 30px;
+	padding: 20px;
+	background-color: $accent-light;
+	text-transform: uppercase;
+}
+
+.input {
+	border: 0;
+	border-radius: 30px;
+	width: 720px;
+}

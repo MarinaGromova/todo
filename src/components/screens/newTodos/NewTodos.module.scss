@@ -1,8 +1,8 @@
 .wrapper {
-	padding: 40px;
 	display: flex;
 	flex-direction: column;
 	row-gap: 20px;
+	padding: 10px;
 }
 
 .li {
@@ -10,6 +10,7 @@
 	flex-direction: row;
 	gap: 30px;
 	align-items: center;
+	justify-content: center;
 }
 
 .il {
@@ -17,18 +18,20 @@
 	flex-direction: row;
 	gap: 30px;
 	padding: 40px;
+	justify-content: center;
+	align-items: center;
 }
 
 .circle {
-	width: 64px;
-	height: 64px;
+	width: 40px;
+	height: 40px;
 }
 
-// input {
-// 	accent-color: #adefd1;
-// 	width: 60px;
-// 	height: 60px;
-// }
+.heading {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: clamp(3.75rem, 2.8554rem + 3.9761vw, 6.25rem);
+}
 
 .close {
 	padding: 0;

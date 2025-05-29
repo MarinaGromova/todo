@@ -1,4 +1,4 @@
-import { Arrow } from '../arrow/Arrow'
+// import { Arrow } from '../../ui/button/arrow/Arrow'
 import { TaskType } from '../newTodos/NewTodos'
 import styles from './NewTodo.module.scss'
 
@@ -6,13 +6,12 @@ interface NewTodoProps {
 	t: any
 	tasks: Array<TaskType>
 	setTasks: any
-	index: number
 }
 
-export const NewTodo = ({ t, tasks, setTasks, index }: NewTodoProps) => {
-	const choiceTask = (index: number, isDone: boolean) => {
-		let task = tasks.find((t: any) => {
-			return t.id === index
+export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
+	const choiceTask = (t: any, isDone: boolean) => {
+		let task = tasks.find((tas: any) => {
+			return tas.id === t.id
 		})
 		if (task) task.isDone = isDone
 		let copy = [...tasks]
@@ -21,20 +20,20 @@ export const NewTodo = ({ t, tasks, setTasks, index }: NewTodoProps) => {
 
 	return (
 		<>
-			<form>
+			<div className={styles.wrapper}>
 				<label>
 					<input
 						className={styles.checkbox}
 						type='checkbox'
 						checked={t.isDone}
-						onChange={e => choiceTask(t.id, e.target.checked)}
+						onChange={e => choiceTask(t, e.target.checked)}
 					/>
 					<span className={styles.span}></span>
 				</label>
-
 				<span className={styles.p}>{t.task}</span>
-			</form>
-			<Arrow tasks={tasks} setTasks={setTasks} index={index} />
+			</div>
+
+			{/* <Arrow tasks={tasks} setTasks={setTasks} t={t} /> */}
 		</>
 	)
 }
