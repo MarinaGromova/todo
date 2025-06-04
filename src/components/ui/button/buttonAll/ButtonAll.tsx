@@ -1,8 +1,13 @@
 import { useState } from 'react'
-import { NewTodoProps } from '../../../screens/newTodos/NewTodos'
-import styles from '../../../screens/newTodos/NewTodos.module.scss'
+import { TaskType } from '../../../screens/newTodos/NewTodos'
 import { SvgChosen } from '../../svg/SvgChosen'
 import { SvgUnMarket } from '../../svg/SvgUnmarked'
+import styles from './ButtonAll.module.scss'
+
+interface NewTodoProps {
+	tasks: Array<TaskType>
+	setTasks: any
+}
 
 export const ButtonAll = ({ tasks, setTasks }: NewTodoProps) => {
 	const [choice, setChoiceAll] = useState(false)

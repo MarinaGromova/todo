@@ -5,6 +5,7 @@ import { useBackGroundResize } from './hooks/useBackGroundResize'
 
 function App() {
 	const colorObject = useBackGroundResize()
+
 	return (
 		<div style={colorObject}>
 			<Layout />

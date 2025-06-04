@@ -1,8 +1,13 @@
 import { useState } from 'react'
-import { NewTodoProps } from '../../../screens/newTodos/NewTodos'
+import { TaskType } from '../../../screens/newTodos/NewTodos'
 import styles from './ButtonAdd.module.scss'
 
-export const ButtonAdd = ({ setTasks }: NewTodoProps) => {
+export interface NewTodoProps {
+	tasks: Array<TaskType>
+	setTasks: any
+}
+
+export const ButtonAdd = ({ tasks, setTasks }: NewTodoProps) => {
 	const [newTaskValue, setNewTaskValue] = useState('')
 
 	const handleInputChange = (e: any) => {
@@ -12,13 +17,13 @@ export const ButtonAdd = ({ setTasks }: NewTodoProps) => {
 	const addTask = () => {
 		if (newTaskValue !== '') {
 			let newTask = { id: 6, task: newTaskValue, isDone: false }
-			setTasks((t: any) => [newTask, ...t])
+			setTasks([newTask, ...tasks])
 			setNewTaskValue('')
 		}
 	}
 
 	return (
-		<form className={styles.wrapper}>
+		<div className={styles.wrapper}>
 			<input
 				className={styles.input}
 				value={newTaskValue}
@@ -29,6 +34,6 @@ export const ButtonAdd = ({ setTasks }: NewTodoProps) => {
 			<button className={styles.add} onClick={addTask}>
 				+ add
 			</button>
-		</form>
+		</div>
 	)
 }

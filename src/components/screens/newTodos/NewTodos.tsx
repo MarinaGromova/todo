@@ -35,7 +35,7 @@ export const NewTodos = () => {
 				{tasks.map(t => {
 					return (
 						<li key={t.id} className={styles.li}>
-							<NewTodo t={t} key={t.id} tasks={tasks} setTasks={setTasks} />
+							<NewTodo t={t} tasks={tasks} setTasks={setTasks} />
 						</li>
 					)
 				})}

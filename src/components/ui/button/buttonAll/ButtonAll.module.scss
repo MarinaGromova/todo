@@ -1,0 +1,16 @@
+@import '/src/assets/styles/variables';
+
+.il {
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+	justify-content: center;
+	align-items: center;
+}
+
+.circle {
+	width: 40px;
+	height: 40px;
+	background-color: $accent-dark;
+	border: none;
+}
