@@ -30,8 +30,8 @@ export const Arrow = ({ tasks, setTasks, t }: NewTodoProps) => {
 		}
 	}
 
-	const deleteTask = (t: any) => {
-		const updateTack = tasks.filter((_: any, i: number) => i !== t.id)
+	const deleteTask = (id: any) => {
+		const updateTack = tasks.filter((t: any) => id !== t.id)
 		setTasks(updateTack)
 	}
 
@@ -43,7 +43,7 @@ export const Arrow = ({ tasks, setTasks, t }: NewTodoProps) => {
 			<button onClick={() => changeTaskUp(t)} className={styles.button}>
 				<GoArrowUp fontSize={30} />
 			</button>
-			<button className={styles.button} onClick={() => deleteTask(t)}>
+			<button className={styles.button} onClick={() => deleteTask(t.id)}>
 				<img src='layout/close.svg' />
 			</button>
 		</div>

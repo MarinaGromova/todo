@@ -1,4 +1,4 @@
-// import { Arrow } from '../../ui/button/arrow/Arrow'
+import { Arrow } from '../../ui/button/arrow/Arrow'
 import { TaskType } from '../newTodos/NewTodos'
 import styles from './NewTodo.module.scss'
 
@@ -33,7 +33,7 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 				<span className={styles.p}>{t.task}</span>
 			</div>
 
-			{/* <Arrow tasks={tasks} setTasks={setTasks} t={t} /> */}
+			<Arrow tasks={tasks} setTasks={setTasks} t={t} />
 		</>
 	)
 }
