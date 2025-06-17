@@ -1,0 +1,17 @@
+@import '../../../assets/styles/variables';
+
+.wrapper {
+	position: relative;
+}
+
+.button {
+	cursor: pointer;
+	width: 60px;
+	height: 60px;
+}
+
+.menu {
+	position: absolute;
+	background-color: aliceblue;
+	color: $accent-dark;
+}

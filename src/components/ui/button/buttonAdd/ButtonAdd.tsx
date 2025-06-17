@@ -16,7 +16,7 @@ export const ButtonAdd = ({ tasks, setTasks }: NewTodoProps) => {
 
 	const addTask = () => {
 		if (newTaskValue !== '') {
-			let newTask = { id: tasks.length + 1, task: newTaskValue, isDone: false }
+			let newTask = { id: tasks.length, task: newTaskValue, isDone: false }
 			setTasks([...tasks, newTask])
 			setNewTaskValue('')
 		}

@@ -10,9 +10,7 @@ interface NewTodoProps {
 
 export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 	const choiceTask = (t: any, isDone: boolean) => {
-		let task = tasks.find((tas: any) => {
-			return tas.id === t.id
-		})
+		let task = tasks.find((tas: any) => tas.id === t.id)
 		if (task) task.isDone = isDone
 		let copy = [...tasks]
 		setTasks(copy)
@@ -33,7 +31,7 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 				<span className={styles.p}>{t.task}</span>
 			</div>
 
-			<Arrow tasks={tasks} setTasks={setTasks} t={t} />
+			<Arrow tasks={tasks} setTasks={setTasks} index={t.id} />
 		</>
 	)
 }

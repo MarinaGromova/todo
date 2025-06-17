@@ -1,3 +1,4 @@
+import { Hamburger } from '../hamburger/Hamburger'
 import styles from './Header.module.scss'
 
 export const Header = () => {
@@ -6,9 +7,7 @@ export const Header = () => {
 			<button className={styles.button}>
 				<img src='/header/profile.svg' alt='icon minion' />
 			</button>
-			<button className={styles.button}>
-				<img src='/header/menu.svg' alt='icon menu' />
-			</button>
+			<Hamburger />
 		</header>
 	)
 }
