@@ -3,3 +3,6 @@
 $default-font: 'Josefin Sans', sans-serif;
 $accent-dark: #00203f;
 $accent-light: #adefd1;
+$bx: 0 3px 6px $accent-light;
+$fs: clamp(1.125rem, 0.9684rem + 0.6958vw, 1.5625rem);
+$padding: clamp(0.625rem, 0.3962rem + 1vw, 1.25rem);

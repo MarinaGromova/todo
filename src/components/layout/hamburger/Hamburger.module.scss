@@ -5,13 +5,20 @@
 }
 
 .button {
-	cursor: pointer;
 	width: 60px;
 	height: 60px;
 }
 
 .menu {
 	position: absolute;
-	background-color: aliceblue;
+	background-color: #fff;
 	color: $accent-dark;
+	top: calc(100% + 8px);
+	right: 0;
+	padding: 10px 12px;
+	font-size: $fs;
+	box-shadow: $bx;
+	border-radius: 10px 0 10px 10px;
+	min-width: 116px;
+	animation: opacity 1s;
 }

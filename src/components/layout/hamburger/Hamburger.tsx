@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import styles from './Hamburger.module.scss'
 
 export const Hamburger = () => {
@@ -13,7 +14,18 @@ export const Hamburger = () => {
 			>
 				<img src='/header/menu.svg' alt='icon menu' />
 			</button>
-			{isShow && <div className={styles.menu}>fdgtdhrdht</div>}
+			{isShow && (
+				<nav className={styles.menu}>
+					<ul>
+						<li className={styles.li}>Account</li>
+						<li>
+							<Link to='/exit'>
+								<button className={styles.button}>Logout</button>
+							</Link>
+						</li>
+					</ul>
+				</nav>
+			)}
 		</div>
 	)
 }

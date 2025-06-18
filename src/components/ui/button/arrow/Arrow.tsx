@@ -6,16 +6,10 @@ interface NewTodoProps {
 	index: any
 	tasks: Array<TaskType>
 	setTasks: any
+	changeId: any
 }
 
-export const Arrow = ({ tasks, setTasks, index }: NewTodoProps) => {
-	const changeId = (updateTack: any) => {
-		for (let i = 0; i < updateTack.length; i++) {
-			updateTack[i].id = i
-		}
-		setTasks(updateTack)
-	}
-
+export const Arrow = ({ tasks, index, changeId }: NewTodoProps) => {
 	const changeTaskUp = (id: number) => {
 		const updateTack = [...tasks]
 		if (id > 0) {
@@ -38,11 +32,6 @@ export const Arrow = ({ tasks, setTasks, index }: NewTodoProps) => {
 		}
 	}
 
-	const deleteTask = (id: any) => {
-		const updateTack = tasks.filter((t: any) => id !== t.id)
-		changeId(updateTack)
-	}
-
 	return (
 		<div className={styles.arrow}>
 			<button onClick={() => changeTaskDown(index)} className={styles.button}>
@@ -50,9 +39,6 @@ export const Arrow = ({ tasks, setTasks, index }: NewTodoProps) => {
 			</button>
 			<button onClick={() => changeTaskUp(index)} className={styles.button}>
 				<GoArrowUp fontSize={30} />
-			</button>
-			<button className={styles.button} onClick={() => deleteTask(index)}>
-				<img src='layout/close.svg' />
 			</button>
 		</div>
 	)

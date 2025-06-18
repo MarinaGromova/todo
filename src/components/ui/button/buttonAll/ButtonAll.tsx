@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { TaskType } from '../../../screens/newTodos/NewTodos'
 import { SvgChosen } from '../../svg/SvgChosen'
 import { SvgUnMarket } from '../../svg/SvgUnmarked'
+import { useBackGroundResize } from './../../../../hooks/useBackGroundResize'
 import styles from './ButtonAll.module.scss'
 
 interface NewTodoProps {
@@ -11,6 +12,8 @@ interface NewTodoProps {
 
 export const ButtonAll = ({ tasks, setTasks }: NewTodoProps) => {
 	const [choice, setChoiceAll] = useState(false)
+
+	const colorObject = useBackGroundResize()
 
 	const choiceAll = () => {
 		setChoiceAll(!choice)
@@ -32,7 +35,11 @@ export const ButtonAll = ({ tasks, setTasks }: NewTodoProps) => {
 	return (
 		<div className={styles.il}>
 			<button className={styles.circle} onClick={choiceAll}>
-				{choice ? <SvgUnMarket /> : <SvgChosen />}
+				{choice ? (
+					<SvgUnMarket color={colorObject} />
+				) : (
+					<SvgChosen color={colorObject} />
+				)}
 			</button>
 			<p>All</p>
 		</div>

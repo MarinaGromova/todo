@@ -22,8 +22,19 @@ body {
 	min-width: 360px;
 	line-height: 1.65;
 	overflow-x: hidden;
+	@media (max-width: 768px) {
+		background-color: $accent-light;
+	}
 }
 
 ul {
 	list-style: none;
+}
+
+button {
+	border: 0;
+	background-color: #fff;
+	font-size: $fs;
+	color: $accent-dark;
+	cursor: pointer;
 }

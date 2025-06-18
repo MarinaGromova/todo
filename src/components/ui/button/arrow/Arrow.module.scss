@@ -1,12 +1,16 @@
+@import '../../../../assets/styles/variables';
+
 .arrow {
 	display: flex;
 	gap: 15px;
-	justify-content: end;
+	align-items: center;
+	justify-content: center;
 }
 
-.button {
-	padding: 0;
-	width: 30px;
-	height: 30px;
-	cursor: pointer;
-}
+// .change {
+// 	display: flex;
+// 	gap: 15px;
+// 	@media (max-width: 768px) {
+// 		// display: none;
+// 	}
+// }

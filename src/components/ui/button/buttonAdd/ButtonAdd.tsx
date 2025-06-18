@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useBackGroundResize } from '../../../../hooks/useBackGroundResize'
 import { TaskType } from '../../../screens/newTodos/NewTodos'
 import styles from './ButtonAdd.module.scss'
 
@@ -9,6 +10,7 @@ export interface NewTodoProps {
 
 export const ButtonAdd = ({ tasks, setTasks }: NewTodoProps) => {
 	const [newTaskValue, setNewTaskValue] = useState('')
+	const colorObject = useBackGroundResize()
 
 	const handleInputChange = (e: any) => {
 		setNewTaskValue(e.target.value)
@@ -30,9 +32,10 @@ export const ButtonAdd = ({ tasks, setTasks }: NewTodoProps) => {
 				type='text'
 				onChange={handleInputChange}
 				placeholder='Enter a task ...'
+				name='Task'
 			/>
 			<button className={styles.add} onClick={addTask}>
-				+ add
+				{colorObject.textAdd}
 			</button>
 		</div>
 	)

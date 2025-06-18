@@ -9,6 +9,18 @@ interface NewTodoProps {
 }
 
 export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
+	const changeId = (updateTack: any) => {
+		for (let i = 0; i < updateTack.length; i++) {
+			updateTack[i].id = i
+		}
+		setTasks(updateTack)
+	}
+
+	const deleteTask = (id: any) => {
+		const updateTack = tasks.filter((t: any) => id !== t.id)
+		changeId(updateTack)
+	}
+
 	const choiceTask = (t: any, isDone: boolean) => {
 		let task = tasks.find((tas: any) => tas.id === t.id)
 		if (task) task.isDone = isDone
@@ -25,13 +37,21 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 						type='checkbox'
 						checked={t.isDone}
 						onChange={e => choiceTask(t, e.target.checked)}
+						name='checked'
 					/>
 					<span className={styles.span}></span>
 				</label>
 				<span className={styles.p}>{t.task}</span>
+				<button className={styles.button}>
+					<img src='layout/close.svg' onClick={() => deleteTask(t.id)} />
+				</button>
 			</div>
-
-			<Arrow tasks={tasks} setTasks={setTasks} index={t.id} />
+			<Arrow
+				tasks={tasks}
+				setTasks={setTasks}
+				index={t.id}
+				changeId={changeId}
+			/>
 		</>
 	)
 }

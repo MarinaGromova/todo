@@ -1,11 +1,12 @@
+@import '../../../assets/styles/variables';
+
 .wrapper {
 	display: flex;
 	justify-content: space-between;
-	padding: 20px;
+	padding: $padding;
 }
 
 .button {
-	cursor: pointer;
 	width: 60px;
 	height: 60px;
 }
