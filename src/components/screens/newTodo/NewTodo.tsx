@@ -43,15 +43,14 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 				</label>
 				<span className={styles.p}>{t.task}</span>
 				<button className={styles.button}>
-					<img src='layout/close.svg' onClick={() => deleteTask(t.id)} />
+					<img
+						className={styles.img}
+						src='layout/close.svg'
+						onClick={() => deleteTask(t.id)}
+					/>
 				</button>
 			</div>
-			<Arrow
-				tasks={tasks}
-				setTasks={setTasks}
-				index={t.id}
-				changeId={changeId}
-			/>
+			<Arrow tasks={tasks} index={t.id} changeId={changeId} />
 		</>
 	)
 }

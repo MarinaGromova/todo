@@ -3,7 +3,7 @@
 export let data = [
 	{
 		id: 0,
-		task: 'Vitaminhhhhhhhhhhhhhhhhhhhhhhhgggggggggggggggghhhhhhhhhhhhhhhhhhhggggggggg',
+		task: 'Vitamin',
 		isDone: false,
 	},
 	{ id: 1, task: 'Studies', isDone: false },

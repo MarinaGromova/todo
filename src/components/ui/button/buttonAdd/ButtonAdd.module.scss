@@ -27,11 +27,23 @@
 }
 
 .input {
-	border: 0;
+	border: 1px solid $accent-light;
 	border-radius: 30px;
 	max-width: 834px;
-	width: 61vw;
+	width: 70vw;
 	height: 64px;
 	padding: 10px;
-	border: 1px solid $accent-dark;
+	font-size: $fs;
+	color: $accent-dark;
+	text-transform: capitalize;
+	@media (max-width: 768px) {
+		width: 80vw;
+		background-color: $accent-dark;
+		border: 1px solid $accent-dark;
+		color: #fff;
+	}
+}
+
+::placeholder {
+	font-size: 14px;
 }

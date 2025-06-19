@@ -28,7 +28,7 @@ export const NewTodos = () => {
 			<h1 className={styles.heading}>todo</h1>
 			<ButtonAdd tasks={tasks} setTasks={setTasks} />
 			{tasks.length === 0 ? (
-				<img className={styles.img} src='/public/main/lauren.jpg' />
+				<img className={styles.img} src='/main/lauren.jpg' />
 			) : (
 				<>
 					<ul className={styles.wrapper}>

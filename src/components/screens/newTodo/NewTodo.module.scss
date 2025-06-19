@@ -3,21 +3,25 @@
 .wrapper {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	position: relative;
-	gap: 20px;
+	gap: 10px;
 	padding: 10px;
 	border-radius: 30px;
 	max-width: 650px;
-	width: 47vw;
+	width: 65vw;
 	min-height: 66px;
 	background-color: #002448;
+	@media (max-width: 768px) {
+		// width: 65vw;
+	}
 }
 
 .p {
-	margin-left: 50px;
-	font-size: 30px;
+	margin-left: 30px;
+	font-size: $fst;
 	word-break: break-all;
-	padding: 5px;
+	text-transform: capitalize;
 	@media (max-width: 768px) {
 		color: $accent-light;
 	}
@@ -38,8 +42,12 @@
 }
 
 .button {
-	padding: 0;
-	border: 1px solid $accent-dark;
+	width: 30px;
+	height: 30px;
+	background-color: $accent-light;
+}
+
+.img {
 	width: 30px;
 	height: 30px;
 }

@@ -5,7 +5,6 @@ import styles from './Arrow.module.scss'
 interface NewTodoProps {
 	index: any
 	tasks: Array<TaskType>
-	setTasks: any
 	changeId: any
 }
 
