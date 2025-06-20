@@ -15,9 +15,6 @@ export const useBackGroundResize = () => {
 			setWidth(width)
 		}
 		window.addEventListener('resize', listener)
-		return () => {
-			window.removeEventListener('resize', listener) // Очистка слушателя
-		}
 	}, [])
 
 	return { background: background, color: color, textAdd: textAdd }

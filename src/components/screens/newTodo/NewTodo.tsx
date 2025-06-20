@@ -19,6 +19,8 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 	const deleteTask = (id: any) => {
 		const updateTack = tasks.filter((t: any) => id !== t.id)
 		changeId(updateTack)
+
+		// setTasks(list => list.filter((t: any) => id !== t.id))
 	}
 
 	const choiceTask = (t: any, isDone: boolean) => {
@@ -26,6 +28,13 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 		if (task) task.isDone = isDone
 		let copy = [...tasks]
 		setTasks(copy)
+	}
+
+	const changeTask = (e: any) => {
+		t.task = e.target.value
+		setTasks((list: any) =>
+			list.map((item: any) => (item.id === t.id ? { ...item } : item))
+		)
 	}
 
 	return (
@@ -41,7 +50,19 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 					/>
 					<span className={styles.span}></span>
 				</label>
-				<span className={styles.p}>{t.task}</span>
+				{/* <span className={styles.p}>{t.task}</span> */}
+
+				<label>
+					<input
+						className={styles.p}
+						type='text'
+						value={t.task}
+						onChange={changeTask}
+						name='name'
+					/>
+					{/* <span className={styles.span}>{t.task}</span> */}
+				</label>
+
 				<button className={styles.button}>
 					<img
 						className={styles.img}
