@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Arrow } from '../../ui/button/arrow/Arrow'
 import { TaskType } from '../newTodos/NewTodos'
 import styles from './NewTodo.module.scss'
@@ -9,6 +10,7 @@ interface NewTodoProps {
 }
 
 export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
+	const [isInput, setInput] = useState(false)
 	const changeId = (updateTack: any) => {
 		for (let i = 0; i < updateTack.length; i++) {
 			updateTack[i].id = i
@@ -19,8 +21,6 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 	const deleteTask = (id: any) => {
 		const updateTack = tasks.filter((t: any) => id !== t.id)
 		changeId(updateTack)
-
-		// setTasks(list => list.filter((t: any) => id !== t.id))
 	}
 
 	const choiceTask = (t: any, isDone: boolean) => {
@@ -50,19 +50,25 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 					/>
 					<span className={styles.span}></span>
 				</label>
-				{/* <span className={styles.p}>{t.task}</span> */}
 
-				<label>
-					<input
-						className={styles.p}
-						type='text'
-						value={t.task}
-						onChange={changeTask}
-						name='name'
-					/>
-					{/* <span className={styles.span}>{t.task}</span> */}
-				</label>
-
+				{isInput ? (
+					<label>
+						<input
+							className={styles.p}
+							type='text'
+							value={t.task}
+							onChange={changeTask}
+							name='name'
+						/>
+					</label>
+				) : (
+					<>
+						<span className={styles.p}>{t.task}</span>
+					</>
+				)}
+				<button className={styles.button} onClick={() => setInput(!isInput)}>
+					<img className={styles.img} src='/public/main/pen.png' />
+				</button>
 				<button className={styles.button}>
 					<img
 						className={styles.img}
