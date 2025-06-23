@@ -51,24 +51,32 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 					<span className={styles.span}></span>
 				</label>
 
-				{isInput ? (
-					<label>
-						<input
-							className={styles.p}
-							type='text'
-							value={t.task}
-							onChange={changeTask}
-							name='name'
-						/>
-					</label>
-				) : (
-					<>
-						<span className={styles.p}>{t.task}</span>
-					</>
-				)}
-				<button className={styles.button} onClick={() => setInput(!isInput)}>
-					<img className={styles.img} src='/public/main/pen.png' />
-				</button>
+				<div className={styles.wrap}>
+					{isInput ? (
+						<label>
+							<input
+								className={styles.p}
+								type='text'
+								value={t.task}
+								onChange={changeTask}
+								name='name'
+							/>
+						</label>
+					) : (
+						<>
+							<span className={styles.p}>{t.task}</span>
+						</>
+					)}
+					<button
+						className={
+							!isInput ? styles.button : styles.button + ' ' + styles.buttons
+						}
+						onClick={() => setInput(!isInput)}
+					>
+						<img className={styles.img} src='/main/pen.png' />
+					</button>
+				</div>
+
 				<button className={styles.button}>
 					<img
 						className={styles.img}

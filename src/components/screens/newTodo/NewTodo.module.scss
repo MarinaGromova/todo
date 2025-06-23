@@ -15,10 +15,13 @@
 }
 
 .p {
+	border: 0;
 	margin-left: 30px;
 	font-size: $fst;
 	word-break: break-all;
 	text-transform: capitalize;
+	color: $accent-light;
+	background: transparent;
 	@media (max-width: 768px) {
 		color: $accent-light;
 	}
@@ -26,6 +29,13 @@
 
 .checkbox {
 	display: none;
+}
+
+.wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
 }
 
 .span {
@@ -41,12 +51,18 @@
 .button {
 	width: 30px;
 	height: 30px;
+	// margin-top: 10px;
 	background-color: $accent-light;
+}
+
+.buttons {
+	margin-top: 10px;
 }
 
 .img {
 	width: 30px;
 	height: 30px;
+	padding: 5px;
 }
 
 .checkbox:checked + .span::before {
