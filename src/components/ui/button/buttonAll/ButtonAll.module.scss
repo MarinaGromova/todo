@@ -1,4 +1,4 @@
-@import '/src/assets/styles/variables';
+@use '/src/assets/styles/variables';
 
 .il {
 	display: flex;
@@ -11,9 +11,9 @@
 .circle {
 	width: 36px;
 	height: 36px;
-	background-color: $accent-dark;
+	background-color: variables.$accent-dark;
 	border: none;
 	@media (max-width: 768px) {
-		background-color: $accent-light;
+		background-color: variables.$accent-light;
 	}
 }

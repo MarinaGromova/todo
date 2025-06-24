@@ -1,9 +1,9 @@
-@import '../../assets/styles/variables';
+@use '../../assets/styles/variables';
 
 .wrapper {
 	display: flex;
 	justify-content: space-between;
-	padding: $padding;
+	padding: variables.$padding;
 }
 
 .layout {

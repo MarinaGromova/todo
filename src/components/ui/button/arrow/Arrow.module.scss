@@ -1,4 +1,4 @@
-@import '../../../../assets/styles/variables';
+@use '../../../../assets/styles/variables';
 
 .arrow {
 	display: flex;
@@ -14,8 +14,8 @@
 .button {
 	width: 30px;
 	height: 30px;
-	background-color: $accent-light;
+	background-color: variables.$accent-light;
 	@media (max-width: 900px) {
-		border: 1px solid $accent-dark;
+		border: 1px solid variables.$accent-dark;
 	}
 }

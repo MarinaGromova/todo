@@ -1,4 +1,4 @@
-@import '../../../assets/styles/variables';
+@use '../../../assets/styles/variables';
 
 .wrapper {
 	display: flex;
@@ -17,13 +17,13 @@
 .p {
 	border: 0;
 	margin-left: 30px;
-	font-size: $fst;
+	font-size: variables.$fst;
 	word-break: break-all;
 	text-transform: capitalize;
-	color: $accent-light;
+	color: variables.$accent-light;
 	background: transparent;
 	@media (max-width: 768px) {
-		color: $accent-light;
+		color: variables.$accent-light;
 	}
 }
 
@@ -42,7 +42,7 @@
 	border-radius: 50% 50%;
 	width: 30px;
 	height: 30px;
-	background-color: $accent-light;
+	background-color: variables.$accent-light;
 	position: absolute;
 	top: 18px;
 	left: 10px;
@@ -52,7 +52,7 @@
 	width: 30px;
 	height: 30px;
 	// margin-top: 10px;
-	background-color: $accent-light;
+	background-color: variables.$accent-light;
 }
 
 .buttons {

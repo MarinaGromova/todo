@@ -1,24 +1,24 @@
-@import '../../../../assets/styles/variables';
+@use '../../../../assets/styles/variables';
 
 .wrapper {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	padding: $padding;
+	padding: variables.$padding;
 }
 
 .add {
-	font-size: $fs;
+	font-size: variables.$fs;
 	border-radius: 30px;
-	background-color: $accent-light;
+	background-color: variables.$accent-light;
 	text-transform: capitalize;
 	min-width: 116px;
 	margin-left: -116px;
 	height: 64px;
 	@media (max-width: 768px) {
-		background-color: $accent-dark;
-		color: $accent-light;
+		background-color: variables.$accent-dark;
+		color: variables.$accent-light;
 		font-size: 20px;
 		min-width: 80px;
 		margin-left: -80px;
@@ -27,19 +27,19 @@
 }
 
 .input {
-	border: 1px solid $accent-light;
+	border: 1px solid variables.$accent-light;
 	border-radius: 30px;
 	max-width: 834px;
 	width: 70vw;
 	height: 64px;
 	padding: 10px;
-	font-size: $fs;
-	color: $accent-dark;
+	font-size: variables.$fs;
+	color: variables.$accent-dark;
 	text-transform: capitalize;
 	@media (max-width: 768px) {
 		width: 80vw;
-		background-color: $accent-dark;
-		border: 1px solid $accent-dark;
+		background-color: variables.$accent-dark;
+		border: 1px solid variables.$accent-dark;
 		color: #fff;
 	}
 }

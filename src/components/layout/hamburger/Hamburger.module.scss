@@ -1,4 +1,4 @@
-@import '../../../assets/styles/variables';
+@use '../../../assets/styles/variables';
 
 .wrapper {
 	position: relative;
@@ -12,12 +12,12 @@
 .menu {
 	position: absolute;
 	background-color: #fff;
-	color: $accent-dark;
+	color: variables.$accent-dark;
 	top: calc(100% + 8px);
 	right: 0;
 	padding: 10px 12px;
-	font-size: $fs;
-	box-shadow: $bx;
+	font-size: variables.$fs;
+	box-shadow: variables.$bx;
 	border-radius: 10px 0 10px 10px;
 	min-width: 116px;
 	animation: opacity 1s;
