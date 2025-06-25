@@ -15,17 +15,21 @@
 }
 
 .p {
-	border: 0;
+	background-color: variables.$accent-dark;
+	color: variables.$accent-light;
 	margin-left: 30px;
 	font-size: variables.$fst;
 	word-break: break-all;
 	text-transform: capitalize;
-	color: variables.$accent-light;
-	background: transparent;
+	border: 0;
 	@media (max-width: 768px) {
 		color: variables.$accent-light;
 	}
 }
+
+// textarea:focus {
+// 	border: 1px solid #fff;
+// }
 
 .checkbox {
 	display: none;

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef } from 'react'
 import { Arrow } from '../../ui/button/arrow/Arrow'
 import { TaskType } from '../newTodos/NewTodos'
 import styles from './NewTodo.module.scss'
@@ -10,7 +10,8 @@ interface NewTodoProps {
 }
 
 export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
-	const [isInput, setInput] = useState(false)
+	// const [isInput, setInput] = useState(false)
+	const inputRef = useRef(null)
 	const changeId = (updateTack: any) => {
 		for (let i = 0; i < updateTack.length; i++) {
 			updateTack[i].id = i
@@ -37,6 +38,13 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 		)
 	}
 
+	const handleButtonClick = () => {
+		console.log(inputRef.current)
+		if (inputRef.current && !inputRef.current.matches(':focus')) {
+			inputRef.current.focus()
+		}
+	}
+
 	return (
 		<>
 			<div className={styles.wrapper}>
@@ -52,27 +60,16 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 				</label>
 
 				<div className={styles.wrap}>
-					{isInput ? (
-						<label>
-							<input
-								className={styles.p}
-								type='text'
-								value={t.task}
-								onChange={changeTask}
-								name='name'
-							/>
-						</label>
-					) : (
-						<>
-							<span className={styles.p}>{t.task}</span>
-						</>
-					)}
-					<button
-						className={
-							!isInput ? styles.button : styles.button + ' ' + styles.buttons
-						}
-						onClick={() => setInput(!isInput)}
-					>
+					<label>
+						<textarea
+							ref={inputRef}
+							className={styles.p}
+							value={t.task}
+							onChange={changeTask}
+							name='task'
+						></textarea>
+					</label>
+					<button onClick={handleButtonClick} className={styles.button}>
 						<img className={styles.img} src='/main/pen.png' />
 					</button>
 				</div>
