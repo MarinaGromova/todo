@@ -39,7 +39,7 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 	}
 
 	const handleButtonClick = () => {
-		console.log(inputRef.current)
+		inputRef.current.style.height = inputRef.current.scrollHeight - 6 + 'px'
 		if (inputRef.current && !inputRef.current.matches(':focus')) {
 			inputRef.current.focus()
 		}
@@ -72,15 +72,14 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 					<button onClick={handleButtonClick} className={styles.button}>
 						<img className={styles.img} src='/main/pen.png' />
 					</button>
+					<button className={styles.button}>
+						<img
+							className={styles.img}
+							src='layout/close.svg'
+							onClick={() => deleteTask(t.id)}
+						/>
+					</button>
 				</div>
-
-				<button className={styles.button}>
-					<img
-						className={styles.img}
-						src='layout/close.svg'
-						onClick={() => deleteTask(t.id)}
-					/>
-				</button>
 			</div>
 			<Arrow tasks={tasks} index={t.id} changeId={changeId} />
 		</>

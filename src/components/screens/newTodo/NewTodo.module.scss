@@ -3,7 +3,7 @@
 .wrapper {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	position: relative;
 	gap: 10px;
 	padding: 10px;
@@ -15,15 +15,25 @@
 }
 
 .p {
-	background-color: variables.$accent-dark;
+	width: 130%;
+	height: auto;
+	resize: none;
+	overflow: hidden;
+	align-content: center;
+	background-color: #002448;
 	color: variables.$accent-light;
-	margin-left: 30px;
 	font-size: variables.$fst;
 	word-break: break-all;
 	text-transform: capitalize;
+	padding-top: 6%;
 	border: 0;
+	margin-left: 30px;
 	@media (max-width: 768px) {
+		padding-top: 9%;
 		color: variables.$accent-light;
+	}
+	@media (max-width: 360px) {
+		padding-top: 12%;
 	}
 }
 
@@ -48,8 +58,8 @@
 	height: 30px;
 	background-color: variables.$accent-light;
 	position: absolute;
-	top: 18px;
-	left: 10px;
+	top: 40%;
+	left: 5%;
 }
 
 .button {
