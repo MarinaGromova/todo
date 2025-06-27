@@ -32,23 +32,24 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 	}
 
 	const changeTask = (e: any) => {
+		inputRef.current.style.height = inputRef.current.scrollHeight - 6 + 'px'
 		t.task = e.target.value
 		setTasks((list: any) =>
 			list.map((item: any) => (item.id === t.id ? { ...item } : item))
 		)
 	}
 
-	const handleButtonClick = () => {
-		inputRef.current.style.height = inputRef.current.scrollHeight - 6 + 'px'
-		if (inputRef.current && !inputRef.current.matches(':focus')) {
-			inputRef.current.focus()
-		}
-	}
+	// const handleButtonClick = () => {
+	// 	inputRef.current.style.height = inputRef.current.scrollHeight - 6 + 'px'
+	// 	if (inputRef.current && !inputRef.current.matches(':focus')) {
+	// 		inputRef.current.focus()
+	// 	}
+	// }
 
 	return (
 		<>
 			<div className={styles.wrapper}>
-				<label>
+				<label className={styles.label}>
 					<input
 						className={styles.checkbox}
 						type='checkbox'
@@ -60,26 +61,25 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 				</label>
 
 				<div className={styles.wrap}>
-					<label>
-						<textarea
-							ref={inputRef}
-							className={styles.p}
-							value={t.task}
-							onChange={changeTask}
-							name='task'
-						></textarea>
-					</label>
-					<button onClick={handleButtonClick} className={styles.button}>
+					<textarea
+						ref={inputRef}
+						className={styles.p}
+						value={t.task}
+						onChange={changeTask}
+						name='task'
+					></textarea>
+
+					{/* <button onClick={handleButtonClick} className={styles.button}>
 						<img className={styles.img} src='/main/pen.png' />
-					</button>
-					<button className={styles.button}>
-						<img
-							className={styles.img}
-							src='layout/close.svg'
-							onClick={() => deleteTask(t.id)}
-						/>
-					</button>
+					</button> */}
 				</div>
+				<button className={styles.button}>
+					<img
+						className={styles.img}
+						src='layout/close.svg'
+						onClick={() => deleteTask(t.id)}
+					/>
+				</button>
 			</div>
 			<Arrow tasks={tasks} index={t.id} changeId={changeId} />
 		</>
