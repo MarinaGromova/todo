@@ -38,3 +38,11 @@ button {
 	color: variables.$accent-dark;
 	cursor: pointer;
 }
+
+:focus {
+	outline: 2px solid variables.$accent-light;
+}
+
+textarea:focus {
+	outline: none;
+}
