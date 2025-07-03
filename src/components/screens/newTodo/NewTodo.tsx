@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Arrow } from '../../ui/button/arrow/Arrow'
 import { TaskType } from '../newTodos/NewTodos'
 import styles from './NewTodo.module.scss'
@@ -10,7 +10,7 @@ interface NewTodoProps {
 }
 
 export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
-	// const [isInput, setInput] = useState(false)
+	const [isInput, setInput] = useState(false)
 	const inputRef = useRef(null)
 	const changeId = (updateTack: any) => {
 		for (let i = 0; i < updateTack.length; i++) {
@@ -32,19 +32,17 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 	}
 
 	const changeTask = (e: any) => {
-		inputRef.current.style.height = inputRef.current.scrollHeight - 6 + 'px'
+		setInput(true)
+		console.log(e)
+		// if (inputRef.current !== null) {
+		inputRef.current.style.height = inputRef.current.scrollHeight + 'px'
+		// }
+
 		t.task = e.target.value
 		setTasks((list: any) =>
 			list.map((item: any) => (item.id === t.id ? { ...item } : item))
 		)
 	}
-
-	// const handleButtonClick = () => {
-	// 	inputRef.current.style.height = inputRef.current.scrollHeight - 6 + 'px'
-	// 	if (inputRef.current && !inputRef.current.matches(':focus')) {
-	// 		inputRef.current.focus()
-	// 	}
-	// }
 
 	return (
 		<>
@@ -68,11 +66,13 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 						onChange={changeTask}
 						name='task'
 					></textarea>
-
-					{/* <button onClick={handleButtonClick} className={styles.button}>
-						<img className={styles.img} src='/main/pen.png' />
-					</button> */}
+					{isInput && (
+						<button onClick={() => setInput(false)} className={styles.button}>
+							<p className={styles.text}>ok</p>
+						</button>
+					)}
 				</div>
+
 				<button className={styles.button}>
 					<img
 						className={styles.img}
