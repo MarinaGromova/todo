@@ -17,7 +17,11 @@ export const Hamburger = () => {
 			{isShow && (
 				<nav className={styles.menu}>
 					<ul>
-						<li className={styles.li}>Account</li>
+						<li>
+							<Link to='/account'>
+								<button className={styles.button}>Account</button>
+							</Link>
+						</li>
 						<li>
 							<Link to='/exit'>
 								<button className={styles.button}>Logout</button>

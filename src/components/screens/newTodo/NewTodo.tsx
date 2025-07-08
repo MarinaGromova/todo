@@ -33,11 +33,7 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 
 	const changeTask = (e: any) => {
 		setInput(true)
-		console.log(e)
-		// if (inputRef.current !== null) {
 		inputRef.current.style.height = inputRef.current.scrollHeight + 'px'
-		// }
-
 		t.task = e.target.value
 		setTasks((list: any) =>
 			list.map((item: any) => (item.id === t.id ? { ...item } : item))
