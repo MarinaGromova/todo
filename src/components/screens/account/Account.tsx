@@ -1,11 +1,16 @@
+import { Header } from '../../layout/header/Header'
 import styles from './Account.module.scss'
 
 function Account() {
-	console.log('fff')
 	return (
-		<div>
-			<div className={styles.wrapper}>refggfr</div>
-		</div>
+		<>
+			<Header src={'/header/arrow-left.svg'} alt={'icon arrow'} />
+			<main className={styles.wrapper}>
+				<h3>Profile</h3>
+				<img />
+				<p>Marina</p>
+			</main>
+		</>
 	)
 }
 export default Account

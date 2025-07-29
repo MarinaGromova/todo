@@ -12,6 +12,7 @@ interface NewTodoProps {
 export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 	const [isInput, setInput] = useState(false)
 	const inputRef = useRef(null)
+
 	const changeId = (updateTack: any) => {
 		for (let i = 0; i < updateTack.length; i++) {
 			updateTack[i].id = i
@@ -20,8 +21,7 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 	}
 
 	const deleteTask = (id: any) => {
-		const updateTack = tasks.filter((t: any) => id !== t.id)
-		changeId(updateTack)
+		changeId(tasks.filter((t: any) => id !== t.id))
 	}
 
 	const choiceTask = (t: any, isDone: boolean) => {
@@ -33,7 +33,14 @@ export const NewTodo = ({ t, tasks, setTasks }: NewTodoProps) => {
 
 	const changeTask = (e: any) => {
 		setInput(true)
-		inputRef.current.style.height = inputRef.current.scrollHeight + 'px'
+		console.log(inputRef.current)
+		if (inputRef.current === null) {
+			return
+		} else {
+			console.log(inputRef.current.style.height)
+			console.log(inputRef.current.scrollHeight)
+			inputRef.current.style.height = inputRef.current.scrollHeight + 'px'
+		}
 		t.task = e.target.value
 		setTasks((list: any) =>
 			list.map((item: any) => (item.id === t.id ? { ...item } : item))
