@@ -1,7 +1,12 @@
 import { useRef, useState } from 'react'
 import { Arrow } from '../../ui/button/arrow/Arrow'
-import { TaskType } from '../newTodos/NewTodos'
 import styles from './NewTodo.module.scss'
+
+export type TaskType = {
+	id: number
+	task: string
+	isDone: boolean
+}
 
 interface NewTodoProps {
 	t: any

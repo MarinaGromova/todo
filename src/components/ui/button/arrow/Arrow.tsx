@@ -1,5 +1,5 @@
 import { GoArrowDown, GoArrowUp } from 'react-icons/go'
-import { TaskType } from '../../../screens/newTodos/NewTodos'
+import { TaskType } from '../../../screens/newTodo/NewTodo'
 import styles from './Arrow.module.scss'
 
 interface NewTodoProps {

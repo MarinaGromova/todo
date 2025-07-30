@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useBackGroundResize } from '../../../../hooks/useBackGroundResize'
-import { TaskType } from '../../../screens/newTodos/NewTodos'
+import { TaskType } from '../../../screens/newTodo/NewTodo'
 import styles from './ButtonAdd.module.scss'
 
-export interface NewTodoProps {
+interface NewTodoProps {
 	tasks: Array<TaskType>
 	setTasks: any
 }

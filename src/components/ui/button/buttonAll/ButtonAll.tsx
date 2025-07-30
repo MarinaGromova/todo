@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { TaskType } from '../../../screens/newTodos/NewTodos'
+import { TaskType } from '../../../screens/newTodo/NewTodo'
 import { SvgChosen } from '../../svg/SvgChosen'
 import { SvgUnMarket } from '../../svg/SvgUnmarked'
 import { useBackGroundResize } from './../../../../hooks/useBackGroundResize'

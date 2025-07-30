@@ -5,21 +5,6 @@ import { NewTodo } from '../newTodo/NewTodo'
 import { data } from './Constants'
 import styles from './NewTodos.module.scss'
 
-/* TODO: 
-				 6. Отмеченные таски становятся перечеркнутыми и переносятся в правый столбик.
-*/
-
-export type TaskType = {
-	id: number
-	task: string
-	isDone: boolean
-}
-
-export interface NewTodoProps {
-	tasks: Array<TaskType>
-	setTasks: any
-}
-
 export const NewTodos = () => {
 	const [tasks, setTasks] = useState(data)
 
