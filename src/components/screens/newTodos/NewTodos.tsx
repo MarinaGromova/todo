@@ -5,8 +5,21 @@ import { NewTodo } from '../newTodo/NewTodo'
 import { data } from './Constants'
 import styles from './NewTodos.module.scss'
 
+type FilterValueType = 'all' | 'active' | 'completed'
+
 export const NewTodos = () => {
 	const [tasks, setTasks] = useState(data)
+	const [filter, setFilter] = useState<FilterValueType>('all')
+
+	let tasksForTodo = tasks.filter(t => {
+		if (filter === 'active') return t.isDone
+		if (filter === 'completed') return !t.isDone
+		return true
+	})
+
+	const choiceAll = (value: FilterValueType) => {
+		setFilter(value)
+	}
 
 	return (
 		<main className={styles.wrapper}>
@@ -17,7 +30,7 @@ export const NewTodos = () => {
 			) : (
 				<>
 					<ul className={styles.wrapper}>
-						{tasks.map(t => {
+						{tasksForTodo.map(t => {
 							return (
 								<li key={t.id} className={styles.li}>
 									<NewTodo t={t} tasks={tasks} setTasks={setTasks} />
@@ -25,7 +38,7 @@ export const NewTodos = () => {
 							)
 						})}
 					</ul>
-					<ButtonAll tasks={tasks} setTasks={setTasks} />
+					<ButtonAll choiceAll={choiceAll} />
 				</>
 			)}
 		</main>
