@@ -1,6 +1,8 @@
 @use '../../../assets/styles/variables';
 
 .wrapper {
+	margin: 0 auto;
+	max-width: 864px;
 	display: flex;
 	justify-content: space-between;
 	padding: variables.$padding;
