@@ -10,7 +10,6 @@ type FilterValueType = 'all' | 'active' | 'completed'
 export const NewTodos = () => {
 	const [tasks, setTasks] = useState(data)
 	const [filter, setFilter] = useState<FilterValueType>('all')
-	const [color, setColor] = useState('white')
 
 	let tasksForTodo = tasks.filter(t => {
 		if (filter === 'active') return t.isDone
@@ -18,9 +17,8 @@ export const NewTodos = () => {
 		return true
 	})
 
-	const choiceAll = (value: FilterValueType) => {
-		setColor(color === '#adefd1' ? 'white' : '#adefd1')
-		setFilter(value)
+	const handleClick = (filter: FilterValueType) => {
+		setFilter(filter)
 	}
 
 	return (
@@ -40,7 +38,7 @@ export const NewTodos = () => {
 							)
 						})}
 					</ul>
-					<ButtonAll choiceAll={choiceAll} color={color} />
+					<ButtonAll handleClick={handleClick} filter={filter} />
 				</>
 			)}
 		</main>
