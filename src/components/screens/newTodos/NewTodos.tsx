@@ -4,22 +4,17 @@ import { ButtonAll } from '../../ui/button/buttonAll/ButtonAll'
 import { NewTodo } from '../newTodo/NewTodo'
 import { data } from './Constants'
 import styles from './NewTodos.module.scss'
-
-type FilterValueType = 'all' | 'active' | 'completed'
+import { useFilter } from './useFilter'
 
 export const NewTodos = () => {
 	const [tasks, setTasks] = useState(data)
-	const [filter, setFilter] = useState<FilterValueType>('all')
+	const { filter, handleClick } = useFilter()
 
 	let tasksForTodo = tasks.filter(t => {
 		if (filter === 'active') return t.isDone
 		if (filter === 'completed') return !t.isDone
 		return true
 	})
-
-	const handleClick = (filter: FilterValueType) => {
-		setFilter(filter)
-	}
 
 	return (
 		<main className={styles.wrapper}>
